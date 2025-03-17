@@ -11,4 +11,4 @@ class DTFecha{
     public:
         DTFecha(int, int, int);
         ~DTFecha();
-}
+};
