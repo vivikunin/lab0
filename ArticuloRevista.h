@@ -1,0 +1,16 @@
+#include <string>
+#include <set>
+#include "Publicacion.h"
+#include "DTFecha.h"
+
+using namespace std;
+
+class ArticuloRevista: public Publicacion {
+    private:
+        string revista;
+        string extracto;
+    public:
+        ArticuloRevista(string, string, DTFecha, string, string);
+        ~ArticuloRevista();
+        virtual bool contienePalabra(std::string);
+};
