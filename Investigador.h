@@ -1,9 +1,14 @@
+#ifndef INVESTIGADOR_H  
+#define INVESTIGADOR_H
+
 #include <string>
 #include <set>
 #include "DTFecha.h"
 #include "Publicacion.h"
 
 using namespace std;
+
+class Publicacion;
 
 class Investigador{
     private: 
@@ -17,3 +22,5 @@ class Investigador{
         string toString() const;
         set<string> listarPublicaciones(DTFecha,string) const;
 };
+
+#endif 
