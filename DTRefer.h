@@ -1,3 +1,6 @@
+#ifndef DTREFER_H
+#define DTREFER_H
+
 #include <string>
 #include <set>
 #include "DTFecha.h"
@@ -13,4 +16,7 @@ class DTRefer{
     public:
         DTRefer(string, string, DTFecha, set<string>);
         ~DTRefer();
+        friend ostream& operator<<(ostream&, const DTRefer&);
 };
+
+#endif

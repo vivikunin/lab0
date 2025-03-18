@@ -1,3 +1,6 @@
+#ifndef DTFECHA_H
+#define DTFECHA_H
+
 #include <string>
 #include <set>
 
@@ -11,4 +14,7 @@ class DTFecha{
     public:
         DTFecha(int, int, int);
         ~DTFecha();
+        friend ostream& operator<<(ostream&, const DTFecha&);
 };
+
+#endif
