@@ -65,7 +65,7 @@ void parte_b(){
     string editorial = "Software Design";
     set<string> keyWords = {"Diseno", "OOP", "Class"};
     
-    Libro(DOI, titulo, fecha, editorial, keyWords);
+    Libro b1(DOI, titulo, fecha, editorial, keyWords);
 
     DOI = "10.5678/mno345";
     titulo = "Guia de UML";
@@ -73,10 +73,17 @@ void parte_b(){
     editorial = "IEEE";
     keyWords = {"Diagramas", "UML", "Software", "Modelado"};
     
-    Libro(DOI, titulo, fecha, editorial, keyWords); 
+    Libro b2(DOI, titulo, fecha, editorial, keyWords); 
 }
 
 void parte_c(){
+    string DOI = "10.3456/ghi789";
+    string titulo = "Diagramas para Principiantes";
+    DTFecha fecha(20,10,2024);
+    string url = "www.umlparaprincipiantes.com";
+    string contenidoExtraido = "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.";
+
+    PaginaWeb c(DOI, titulo, fecha, url, contenidoExtraido);
 }
 
 void parte_d(){
