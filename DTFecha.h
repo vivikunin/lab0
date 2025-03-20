@@ -12,9 +12,13 @@ class DTFecha{
         int Mes;
         int Anio;
     public:
+        DTFecha();
         DTFecha(int, int, int);
+        DTFecha(DTFecha&);
         ~DTFecha();
         friend ostream& operator<<(ostream&, const DTFecha&);
+        bool operator>=(const DTFecha&) const;
+        DTFecha operator=(DTFecha&);
 };
 
 #endif

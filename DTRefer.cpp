@@ -1,7 +1,16 @@
 #include "DTRefer.h"
 #include <iostream>
+#include <set>
 
 using namespace std;
+
+DTRefer::DTRefer(string DOI, string titulo, DTFecha fecha, set<string> autores){
+    this->DOI = DOI;
+    this->titulo = titulo;
+    this->fecha = fecha;
+    this->autores = autores;
+}
+
 
 ostream& operator<<(ostream &o, const DTRefer &datos){
     o<<datos.DOI << "->"<< datos.titulo << "("<< datos.fecha <<")/";

@@ -3,6 +3,12 @@
 
 using namespace std;
 
+Libro:: Libro(string DOI, string titulo, DTFecha fecha, string editorial, set<string> palabrasDestacadas)
+:Publicacion(DOI,titulo,fecha){
+    this->editorial = editorial;
+    this->palabrasDestacadas = palabrasDestacadas;
+}
+
 bool Libro:: contienePalabra(string palabra){
     bool encontro=false; 
     set<string>::iterator it = this->palabrasDestacadas.begin();
@@ -12,3 +18,4 @@ bool Libro:: contienePalabra(string palabra){
     }   
     return encontro;
 };
+

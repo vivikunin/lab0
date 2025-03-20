@@ -1,3 +1,6 @@
+#ifndef LIBRO_H
+#define LIBRO_H
+
 #include <string>
 #include <set>
 #include "Publicacion.h"
@@ -13,3 +16,5 @@ class Libro: public Publicacion{
         ~Libro();
         virtual bool contienePalabra(std::string);
 };
+
+#endif

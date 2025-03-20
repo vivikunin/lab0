@@ -1,3 +1,6 @@
+#ifndef PAGINAWEB_H
+#define PAGINAWEB_H
+
 #include <string>
 #include "Publicacion.h"
 
@@ -13,3 +16,4 @@ class PaginaWeb: public Publicacion{
         virtual bool contienePalabra(std::string);
 };
 
+#endif

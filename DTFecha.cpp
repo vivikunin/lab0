@@ -3,6 +3,24 @@
 
 using namespace std;
 
+DTFecha::DTFecha(){
+    this->Dia = 0;
+    this->Mes = 0;
+    this->Anio = 0;
+}
+
+DTFecha::DTFecha(int dia, int mes, int anio){
+    this->Dia = dia;
+    this->Mes = mes;
+    this->Anio = anio;
+}
+
+DTFecha:: DTFecha(DTFecha &fecha){
+    this->Dia = fecha.Dia;
+    this->Mes = fecha.Mes;
+    this->Anio = fecha.Anio;
+}
+
 ostream& operator<<(ostream& o, const DTFecha& fecha) {
     o << fecha.Dia << "/" << fecha.Mes << "/" << fecha.Anio;
     return o;
@@ -18,4 +36,11 @@ bool DTFecha::operator>=(const DTFecha &fecha) const{
         }
     }
     return resultado;
+}
+
+DTFecha DTFecha::operator=(DTFecha &fecha){
+    this->Dia = fecha.Dia;
+    this->Mes = fecha.Mes;
+    this->Anio = fecha.Anio;
+    return *this;
 }

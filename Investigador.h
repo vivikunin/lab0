@@ -17,6 +17,7 @@ class Investigador{
     public:
         Investigador(string, string, string);
         ~Investigador();
+        string getORCID();
         string toString() const;
         set<string> listarPublicaciones(DTFecha,string) const;
 };
