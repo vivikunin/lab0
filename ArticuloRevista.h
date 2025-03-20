@@ -1,3 +1,6 @@
+#ifndef ARTICULOREVISTA_H  
+#define ARTICULOREVISTA_H
+
 #include <string>
 #include <set>
 #include "Publicacion.h"
@@ -14,3 +17,5 @@ class ArticuloRevista: public Publicacion {
         ~ArticuloRevista();
         virtual bool contienePalabra(std::string);
 };
+
+#endif

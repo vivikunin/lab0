@@ -5,7 +5,7 @@ using namespace std;
 
 bool Libro:: contienePalabra(string palabra){
     bool encontro=false; 
-    auto it = this->palabrasDestacadas.begin();
+    set<string>::iterator it = this->palabrasDestacadas.begin();
     while (!encontro && it != this->palabrasDestacadas.end()){
         encontro = (*it==palabra);
         it++;
