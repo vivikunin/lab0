@@ -43,37 +43,37 @@ Publicacion* coleccion_getPublicacion(std::string DOI){
 void parte_a(){
     string DOI = "10.1234/abc123";
     string titulo = "Fundamentos de POO";
-    DTFecha fecha(12,5,2023);
+    DTFecha fecha1(12,5,2023);
     string revista = "Programación Avanzada";
     string extracto = "Introduccion a los principios fundamentales de la programacion orientada a objetos, explicando sus conceptos clave como clases, objetos, herencia y polimorfismo.";
 
-    ArticuloRevista a1(DOI, titulo, fecha, revista, extracto);
+    ArticuloRevista a1(DOI, titulo, fecha1, revista, extracto);
 
     DOI = "10.4567/jkl012";
     titulo = "Utilidad de diagramas UML";
-    DTFecha fecha(10,2,2024);
+    DTFecha fecha2(10,2,2024);
     revista = "Modelado de Software";
     extracto = "Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.";
 
-     ArticuloRevista a2(DOI, titulo, fecha, revista, extracto);
+     ArticuloRevista a2(DOI, titulo, fecha2, revista, extracto);
 }
 
 void parte_b(){
     string DOI = "10.2345/def456";
     string titulo = "Patrones de Diseno en c++";
-    DTFecha fecha(20,8,2022);
+    DTFecha fecha1(20,8,2022);
     string editorial = "Software Design";
     set<string> keyWords = {"Diseno", "OOP", "Class"};
     
-    Libro b1(DOI, titulo, fecha, editorial, keyWords);
+    Libro b1(DOI, titulo, fecha1, editorial, keyWords);
 
     DOI = "10.5678/mno345";
     titulo = "Guia de UML";
-    DTFecha fecha(20,8,2022);
+    DTFecha fecha2(20,8,2022);
     editorial = "IEEE";
     keyWords = {"Diagramas", "UML", "Software", "Modelado"};
     
-    Libro b2(DOI, titulo, fecha, editorial, keyWords); 
+    Libro b2(DOI, titulo, fecha2, editorial, keyWords); 
 }
 
 void parte_c(){

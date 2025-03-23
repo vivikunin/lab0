@@ -8,6 +8,8 @@
 
 using namespace std;
 
+class Publicacion;
+
 class Investigador{
     private: 
         string ORCID;

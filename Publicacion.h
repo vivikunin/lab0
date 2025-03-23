@@ -9,19 +9,23 @@
 
 using namespace std;
 
+class Investigador;
+
 class Publicacion{
     private:
         string DOI;
         string titulo;
         DTFecha fecha;
-        Investigador *autor;
+        set<Investigador*> autores;
     public:
-        Publicacion(std::string, std::string, DTFecha);
-        ~Publicacion();
-        DTFecha getFecha() const;
+        virtual ~Publicacion();
+        DTFecha getFecha();
         DTRefer getDT() const;
         string getTitulo() const;
+        string getDOI();
         virtual bool contienePalabra(string)=0;
+    protected:
+        Publicacion(std::string, std::string, DTFecha);
 };
 
 #endif
