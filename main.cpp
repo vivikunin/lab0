@@ -47,7 +47,8 @@ void parte_a(){
     string revista = "Programación Avanzada";
     string extracto = "Introduccion a los principios fundamentales de la programacion orientada a objetos, explicando sus conceptos clave como clases, objetos, herencia y polimorfismo.";
 
-    ArticuloRevista a1(DOI, titulo, fecha1, revista, extracto);
+    ArticuloRevista* a1= new ArticuloRevista(DOI, titulo, fecha1, revista, extracto);
+    coleccion_guardarPublicacion(a1);
 
     DOI = "10.4567/jkl012";
     titulo = "Utilidad de diagramas UML";
@@ -55,7 +56,8 @@ void parte_a(){
     revista = "Modelado de Software";
     extracto = "Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.";
 
-     ArticuloRevista a2(DOI, titulo, fecha2, revista, extracto);
+    ArticuloRevista* a2= new ArticuloRevista(DOI, titulo, fecha1, revista, extracto);
+    coleccion_guardarPublicacion(a1);
 }
 
 void parte_b(){
@@ -63,17 +65,26 @@ void parte_b(){
     string titulo = "Patrones de Diseno en c++";
     DTFecha fecha1(20,8,2022);
     string editorial = "Software Design";
-    set<string> keyWords = {"Diseno", "OOP", "Class"};
-    
-    Libro b1(DOI, titulo, fecha1, editorial, keyWords);
+    set<string> keyWords1;
+    keyWords1.insert("Diseno");
+    keyWords1.insert("OOP");
+    keyWords1.insert("Class");
+
+    Libro* b1= new Libro(DOI, titulo, fecha1, editorial, keyWords1);
+    coleccion_guardarPublicacion(b1);
 
     DOI = "10.5678/mno345";
     titulo = "Guia de UML";
     DTFecha fecha2(20,8,2022);
     editorial = "IEEE";
-    keyWords = {"Diagramas", "UML", "Software", "Modelado"};
-    
-    Libro b2(DOI, titulo, fecha2, editorial, keyWords); 
+    set<string> keyWords2;
+    keyWords2.insert("Diagramas");
+    keyWords2.insert("UML");
+    keyWords2.insert("Software");
+    keyWords2.insert("Modelado");
+
+    Libro* b2= new Libro(DOI, titulo, fecha1, editorial, keyWords1);
+    coleccion_guardarPublicacion(b2);
 }
 
 void parte_c(){
@@ -83,19 +94,82 @@ void parte_c(){
     string url = "www.umlparaprincipiantes.com";
     string contenidoExtraido = "En esta pagina web se presenta una gui completa sobre los diagramas UML, abordando los diagramas de casos de uso, de clases, de secuencia y de actividades.";
 
-    PaginaWeb c(DOI, titulo, fecha, url, contenidoExtraido);
+    PaginaWeb* c1= new PaginaWeb(DOI, titulo, fecha, url, contenidoExtraido);
+    coleccion_guardarPublicacion(c1);
 }
 
 void parte_d(){
 }
 
 void parte_e(){
+    string ORCID = "0000-0003-1234-5678";
+    string titulo = "Carla Oliveri";
+    string institucion = "Universidad de la Republica";
+    
+    Investigador* I1 = new Investigador (ORCID, titulo, institucion);
+    coleccion_guardarInvestigador(I1);
+
+    ORCID = "0000-0001-8765-4321";
+    titulo = "Alberto Santos";
+    institucion = "Instituto Tecnico";
+
+    Investigador* I2 = new Investigador (ORCID, titulo, institucion);
+    coleccion_guardarInvestigador(I2);
 }
 
 void parte_f(){
+    
 }
 
 void parte_g(){
+    string ORCIDInvestigador = "0000-0003-1234-5678";
+    string DOIPublicacion = "10.1234/abc123";
+    Investigador* I1 = coleccion_getInvestigador(ORCIDInvestigador);
+    Publicacion* P1 = coleccion_getPublicacion(DOIPublicacion);
+    P1->agregarAutor(I1);
+    I1->agregarPublicacion(P1);
+
+    ORCIDInvestigador = "0000-0003-1234-5678";
+    DOIPublicacion = "10.4567/jkl012";
+    Investigador* I2 = coleccion_getInvestigador(ORCIDInvestigador);
+    Publicacion* P2 = coleccion_getPublicacion(DOIPublicacion);
+    P2->agregarAutor(I2);
+    I2->agregarPublicacion(P2);
+
+    ORCIDInvestigador = "0000-0003-1234-5678";
+    DOIPublicacion = "10.5678/mno345";
+    Investigador* I3 = coleccion_getInvestigador(ORCIDInvestigador);
+    Publicacion* P3 = coleccion_getPublicacion(DOIPublicacion);
+    P3->agregarAutor(I3);
+    I3->agregarPublicacion(P3);
+
+    ORCIDInvestigador = "0000-0003-1234-5678";
+    DOIPublicacion = "10.3456/ghi789";
+    Investigador* I4 = coleccion_getInvestigador(ORCIDInvestigador);
+    Publicacion* P4 = coleccion_getPublicacion(DOIPublicacion);
+    P4->agregarAutor(I4);
+    I4->agregarPublicacion(P4);
+
+    ORCIDInvestigador = "0000-0001-8765-4321";
+    DOIPublicacion = "10.1234/abc123";
+    Investigador* I5 = coleccion_getInvestigador(ORCIDInvestigador);
+    Publicacion* P5 = coleccion_getPublicacion(DOIPublicacion);
+    P5->agregarAutor(I5);
+    I5->agregarPublicacion(P5);
+
+    ORCIDInvestigador = "0000-0001-8765-4321";
+    DOIPublicacion = "10.2345/def456";
+    Investigador* I6 = coleccion_getInvestigador(ORCIDInvestigador);
+    Publicacion* P6 = coleccion_getPublicacion(DOIPublicacion);
+    P6->agregarAutor(I6);
+    I6->agregarPublicacion(P6);
+
+    ORCIDInvestigador = "0000-0001-8765-4321";
+    DOIPublicacion = "10.4567/jkl012";
+    Investigador* I7 = coleccion_getInvestigador(ORCIDInvestigador);
+    Publicacion* P7 = coleccion_getPublicacion(DOIPublicacion);
+    P7->agregarAutor(I7);
+    I7->agregarPublicacion(P7);
 }
 
 void parte_h(){
@@ -112,8 +186,8 @@ void parte_k(){
 
 
 int main() {
-	std::cout << "parte_a" <<  std::endl;
-	parte_a();
+	std::cout << "parte_a" <<  std::endl;	
+    parte_a();
 	std::cout << "parte_b" <<  std::endl;
 	parte_b();
 	std::cout << "parte_c" <<  std::endl;

@@ -11,6 +11,7 @@ DTRefer::DTRefer(string DOI, string titulo, DTFecha fecha, set<string> autores){
     this->autores = autores;
 }
 
+DTRefer::~DTRefer() {}
 
 ostream& operator<<(ostream &o, const DTRefer &datos){
     o<<datos.DOI << "->"<< datos.titulo << "("<< datos.fecha <<")/";

@@ -109,6 +109,8 @@
     "tuple": "cpp",
     "typeinfo": "cpp",
     "variant": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "list": "cpp",
+    "map": "cpp"
   }
 }

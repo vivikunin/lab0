@@ -1,7 +1,7 @@
 # Compilador
 CXX = g++
 # Opciones del compilador
-CXXFLAGS = -Wall -g -std=c++11
+CXXFLAGS = -Wall -g -std=c++98
 # Archivos objeto
 OBJ = ArticuloRevista.o DTFecha.o DTRefer.o Investigador.o Libro.o PaginaWeb.o Publicacion.o main.o
 # Nombre del ejecutable

@@ -1,5 +1,6 @@
 #include "Investigador.h"
 #include <string>
+#include <set>
 #include "Publicacion.h"
 
 using namespace std;
@@ -25,3 +26,10 @@ set<string> Investigador:: listarPublicaciones(DTFecha desde,string palabra) con
     return resultado;
 }
 
+string Investigador::getNombre() const{
+    return nombre;
+}
+
+void Investigador::agregarPublicacion(Publicacion* P){
+    this->publicaciones.insert(P);
+}

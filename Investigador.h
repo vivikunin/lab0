@@ -21,7 +21,9 @@ class Investigador{
         ~Investigador();
         string getORCID();
         string toString() const;
+        string getNombre() const;
         set<string> listarPublicaciones(DTFecha,string) const;
+        void agregarPublicacion(Publicacion*);
 };
 
 #endif 

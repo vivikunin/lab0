@@ -21,6 +21,8 @@ DTFecha:: DTFecha(DTFecha &fecha){
     this->Anio = fecha.Anio;
 }
 
+DTFecha::~DTFecha() {}
+
 ostream& operator<<(ostream& o, const DTFecha& fecha) {
     o << fecha.Dia << "/" << fecha.Mes << "/" << fecha.Anio;
     return o;

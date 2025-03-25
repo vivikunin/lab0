@@ -9,6 +9,8 @@ Libro:: Libro(string DOI, string titulo, DTFecha fecha, string editorial, set<st
     this->palabrasDestacadas = palabrasDestacadas;
 }
 
+Libro::~Libro() {}
+
 bool Libro:: contienePalabra(string palabra){
     bool encontro=false; 
     set<string>::iterator it = this->palabrasDestacadas.begin();

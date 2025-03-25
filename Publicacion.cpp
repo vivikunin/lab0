@@ -8,7 +8,10 @@ Publicacion:: Publicacion(string DOI, string titulo, DTFecha fecha){
     this->fecha = fecha;
 }
 
-string Publicacion:: getDOI(){
+Publicacion::~Publicacion() {
+}
+
+string Publicacion:: getDOI() const{
     return DOI;
 }
 
@@ -18,4 +21,12 @@ DTFecha Publicacion::getFecha(){
 
 string Publicacion::getTitulo() const{
     return titulo;
+}
+
+set<Investigador*> Publicacion::getAutores() const{
+    return autores;
+}
+
+void Publicacion::agregarAutor(Investigador* I){
+    this->autores.insert(I);
 }
