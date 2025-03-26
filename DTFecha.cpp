@@ -15,7 +15,7 @@ DTFecha::DTFecha(int dia, int mes, int anio){
     this->Anio = anio;
 }
 
-DTFecha:: DTFecha(DTFecha &fecha){
+DTFecha:: DTFecha(const DTFecha &fecha){
     this->Dia = fecha.Dia;
     this->Mes = fecha.Mes;
     this->Anio = fecha.Anio;
@@ -40,7 +40,7 @@ bool DTFecha::operator>=(const DTFecha &fecha) const{
     return resultado;
 }
 
-DTFecha DTFecha::operator=(DTFecha &fecha){
+DTFecha& DTFecha::operator=(const DTFecha &fecha){
     this->Dia = fecha.Dia;
     this->Mes = fecha.Mes;
     this->Anio = fecha.Anio;

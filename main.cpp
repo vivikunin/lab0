@@ -57,7 +57,7 @@ void parte_a(){
     extracto = "Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.";
 
     ArticuloRevista* a2= new ArticuloRevista(DOI, titulo, fecha1, revista, extracto);
-    coleccion_guardarPublicacion(a1);
+    coleccion_guardarPublicacion(a2);
 }
 
 void parte_b(){
@@ -99,6 +99,10 @@ void parte_c(){
 }
 
 void parte_d(){
+    list<Publicacion*>:: iterator it;
+    for (it=publicaciones.begin(); it!=publicaciones.end(); it++){
+        cout<< (*it)->getDT();
+    }
 }
 
 void parte_e(){
@@ -118,7 +122,10 @@ void parte_e(){
 }
 
 void parte_f(){
-    
+    list<Investigador*>:: iterator it;
+    for (it=investigadores.begin(); it!=investigadores.end(); it++){
+        cout<< (*it)->toString();
+    }
 }
 
 void parte_g(){
@@ -173,17 +180,42 @@ void parte_g(){
 }
 
 void parte_h(){
+    DTFecha f(10,12,2023);
+    string ORCIDInvestigador = "0000-0003-1234-5678";
+    Investigador* I = coleccion_getInvestigador(ORCIDInvestigador);
+    set<string> listaPublicaciones = I->listarPublicaciones(f,"UML");
+    set<string>:: iterator it;
+    for (it=listaPublicaciones.begin(); it!=listaPublicaciones.end(); it++){
+        cout<< (*it) << endl;
+    }
 }
 
 void parte_i(){
+    string DOIPublicacion = "10.4567/jkl012";
+    Publicacion* P = coleccion_getPublicacion(DOIPublicacion);
+    coleccion_eliminarPublicacion(P);
 }
 
 void parte_j(){
+    DTFecha f(1,1,2020);
+    string ORCIDInvestigador = "0000-0003-1234-5678";
+    Investigador* I = coleccion_getInvestigador(ORCIDInvestigador);
+    set<string> listaPublicaciones = I->listarPublicaciones(f,"UML");
+    set<string>:: iterator it;
+    for (it=listaPublicaciones.begin(); it!=listaPublicaciones.end(); it++){
+        cout<< (*it) << endl;
+    }
 }
 
 void parte_k(){
+    list<Publicacion*>:: iterator it;
+    for (it=publicaciones.begin(); it!=publicaciones.end(); it++){
+        cout<< (*it)->getDT();
+    }
 }
 
+void cleanUp(){
+}
 
 int main() {
 	std::cout << "parte_a" <<  std::endl;	

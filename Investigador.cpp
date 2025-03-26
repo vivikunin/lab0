@@ -5,6 +5,16 @@
 
 using namespace std;
 
+Investigador::Investigador(string ORCID, string nombre, string institucion){
+    this->ORCID = ORCID;
+    this->nombre = nombre;
+    this->institucion = institucion;
+    set<Publicacion*> publicaciones;
+    this->publicaciones=publicaciones;
+}
+
+Investigador::~Investigador(){}
+
 string Investigador:: getORCID(){
     return ORCID;
 }

@@ -20,10 +20,13 @@ class Publicacion{
     public:
         virtual ~Publicacion();
         DTFecha getFecha();
-        DTRefer getDT() const;
+        DTRefer getDT();
         string getTitulo() const;
-        string getDOI();
+        string getDOI() const;
+        set<Investigador*> getAutores() const;
         virtual bool contienePalabra(string)=0;
+        void agregarAutor(Investigador* );
+        
     protected:
         Publicacion(std::string, std::string, DTFecha);
 };

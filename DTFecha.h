@@ -14,11 +14,11 @@ class DTFecha{
     public:
         DTFecha();
         DTFecha(int, int, int);
-        DTFecha(DTFecha&);
+        DTFecha(const DTFecha&);
         ~DTFecha();
         friend ostream& operator<<(ostream&, const DTFecha&);
         bool operator>=(const DTFecha&) const;
-        DTFecha operator=(DTFecha&);
+        DTFecha& operator=(const DTFecha&);
 };
 
 #endif

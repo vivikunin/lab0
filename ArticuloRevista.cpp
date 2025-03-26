@@ -1,6 +1,7 @@
 #include "ArticuloRevista.h"
 #include <string>
 
+
 using namespace std;
 
 ArticuloRevista:: ArticuloRevista(string DOI, string titulo, DTFecha fecha, string revista, string extracto)
@@ -15,7 +16,7 @@ bool ArticuloRevista:: contienePalabra(string palabra){
 
 ArticuloRevista::~ArticuloRevista() {}
 
-DTRefer ArticuloRevista::getDT(){
+/*DTRefer ArticuloRevista:: getDT(){ 
     set <string> autoresDT;
     set <Investigador*>:: iterator it;
     for (it = this->getAutores().begin(); it!=this->getAutores().end(); it++){
@@ -23,4 +24,4 @@ DTRefer ArticuloRevista::getDT(){
     }    
     DTRefer resultado(this->getDOI(), this->getTitulo(), this->getFecha(), autoresDT);
     return resultado;
-}
+}*/
