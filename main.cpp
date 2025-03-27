@@ -10,6 +10,8 @@
 #include "PaginaWeb.h"
 #include "Libro.h"
 
+using namespace std;
+
 std::list<Publicacion*> publicaciones;
 std::map<std::string, Publicacion*> map_publicaciones;
 
@@ -21,6 +23,7 @@ void coleccion_guardarPublicacion(Publicacion* pub){
 	std::pair<std::string, Publicacion*> entry(pub->getDOI(), pub);
     map_publicaciones.insert(entry);
 }
+
 void coleccion_eliminarPublicacion(Publicacion* pub){
 	publicaciones.remove(pub);
 	map_publicaciones.erase(pub->getDOI());
@@ -30,6 +33,11 @@ void coleccion_guardarInvestigador(Investigador* inv){
 	investigadores.push_back(inv);
 	std::pair<std::string, Investigador*> entry(inv->getORCID(), inv);
     map_investigadores.insert(entry);
+}
+
+void coleccion_eliminarInvestigador(Investigador* inv){
+	investigadores.remove(inv);
+	map_investigadores.erase(inv->getORCID());
 }
 
 Investigador* coleccion_getInvestigador(std::string ORCID){
@@ -56,7 +64,7 @@ void parte_a(){
     revista = "Modelado de Software";
     extracto = "Ejercicio empirico de como los diagramas UML pueden ayudar en el proceso y documentacion de software, cubriendo los tipos mas importantes utilizados, como clases.";
 
-    ArticuloRevista* a2= new ArticuloRevista(DOI, titulo, fecha1, revista, extracto);
+    ArticuloRevista* a2= new ArticuloRevista(DOI, titulo, fecha2, revista, extracto);
     coleccion_guardarPublicacion(a2);
 }
 
@@ -83,7 +91,7 @@ void parte_b(){
     keyWords2.insert("Software");
     keyWords2.insert("Modelado");
 
-    Libro* b2= new Libro(DOI, titulo, fecha1, editorial, keyWords1);
+    Libro* b2= new Libro(DOI, titulo, fecha2, editorial, keyWords2);
     coleccion_guardarPublicacion(b2);
 }
 
@@ -193,7 +201,13 @@ void parte_h(){
 void parte_i(){
     string DOIPublicacion = "10.4567/jkl012";
     Publicacion* P = coleccion_getPublicacion(DOIPublicacion);
+    set<Investigador*> aEliminar = (*P).getAutores();
+    set<Investigador*>:: iterator it;
+    for (it=aEliminar.begin(); it!=aEliminar.end(); it++){
+        (*it)->eliminarPublicacion(P);
+    }
     coleccion_eliminarPublicacion(P);
+    delete P;
 }
 
 void parte_j(){
@@ -215,6 +229,21 @@ void parte_k(){
 }
 
 void cleanUp(){
+
+    list<Publicacion*> publicacionesBorrar = publicaciones;
+    list<Investigador*> investigadoresBorrar = investigadores;
+
+    list<Publicacion*>:: iterator itp;
+    for (itp=publicacionesBorrar.begin(); itp!=publicacionesBorrar.end(); itp++){
+        coleccion_eliminarPublicacion(*itp);
+        delete (*itp);
+    }
+
+    list<Investigador*>:: iterator iti;
+    for (iti=investigadoresBorrar.begin(); iti!=investigadoresBorrar.end(); iti++){
+        coleccion_eliminarInvestigador(*iti);
+        delete (*iti);
+    }
 }
 
 int main() {

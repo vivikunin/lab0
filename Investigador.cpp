@@ -43,3 +43,7 @@ string Investigador::getNombre() const{
 void Investigador::agregarPublicacion(Publicacion* P){
     this->publicaciones.insert(P);
 }
+
+void Investigador::eliminarPublicacion(Publicacion* P){
+    this->publicaciones.erase(P);
+}

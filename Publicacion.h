@@ -20,10 +20,10 @@ class Publicacion{
     public:
         virtual ~Publicacion();
         DTFecha getFecha();
-        DTRefer getDT();
+        virtual DTRefer getDT();
         string getTitulo() const;
         string getDOI() const;
-        set<Investigador*> getAutores() const;
+        const set<Investigador*>& getAutores() const;
         virtual bool contienePalabra(string)=0;
         void agregarAutor(Investigador* );
         

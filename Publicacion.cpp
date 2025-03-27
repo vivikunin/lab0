@@ -25,7 +25,7 @@ string Publicacion::getTitulo() const{
     return titulo;
 }
 
-set<Investigador*> Publicacion::getAutores() const{
+const set<Investigador*>& Publicacion::getAutores() const{
     return autores;
 }
 

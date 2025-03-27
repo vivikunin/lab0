@@ -11,5 +11,5 @@ PaginaWeb:: PaginaWeb(string DOI, string titulo, DTFecha fecha, string url, stri
 PaginaWeb::~PaginaWeb() {}
 
 bool PaginaWeb:: contienePalabra(string palabra){
-    return this->contenidoExtraido.find(palabra);
+    return this->contenidoExtraido.find(palabra)!= string::npos;
 };

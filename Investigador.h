@@ -24,6 +24,7 @@ class Investigador{
         string getNombre() const;
         set<string> listarPublicaciones(DTFecha,string) const;
         void agregarPublicacion(Publicacion*);
+        void eliminarPublicacion(Publicacion*);
 };
 
 #endif 

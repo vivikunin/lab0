@@ -18,7 +18,6 @@ class ArticuloRevista: public Publicacion {
         ArticuloRevista(string, string, DTFecha, string, string);
         ~ArticuloRevista();
         virtual bool contienePalabra(std::string);
-        //DTRefer getDT() ;
 };
 
 #endif
